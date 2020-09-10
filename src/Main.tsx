@@ -7,6 +7,7 @@ import { History } from 'history';
 import Routes from './routes';
 import { ApplicationState } from './store';
 
+import 'normalize.css/normalize.css'
 import './assets/styles/style.scss';
 
 interface MainProps {

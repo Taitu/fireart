@@ -54,7 +54,7 @@ class QuizContainer extends React.Component<AllProps> {
     const { index } = this.state
     const showResult = questions.length > 0 && index === questions.length
     return (
-      <div>
+      <div className='quiz'>
         {loading && <Loader />}
         {showResult && <Result questions={ questions } playAgain={ this.playAgain }/>}
         {!showResult && questions.length === 0 && <Form startQuiz={ this.startQuiz } />}

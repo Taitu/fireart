@@ -9,22 +9,24 @@ interface QuestionProps {
 
 const Root: React.SFC<QuestionProps> = ({ question, setAnswer }) => {
   return (
-    <div>
-      <div>
+    <div className='question'>
+      <div className='question__category'>
         <strong>
           { question.category }
         </strong>
       </div>
-      <div>
-        <div dangerouslySetInnerHTML={{ __html: question.question }} />
-      </div>
-      <div>
-        <button onClick={ () => setAnswer('True') }>
-          True
-        </button>
-        <button onClick={ () => setAnswer('False') }>
-          False
-        </button>
+      <div className='question__body'>
+        <div className='question__question'>
+          <div dangerouslySetInnerHTML={{ __html: question.question }} />
+        </div>
+        <div className='question__controls'>
+          <button className='btn btn--primary question__controls__btn' onClick={ () => setAnswer('True') }>
+            True
+          </button>
+          <button className='btn btn--primary question__controls__btn' onClick={ () => setAnswer('False') }>
+            False
+          </button>
+        </div>
       </div>
     </div>
   )

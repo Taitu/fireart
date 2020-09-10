@@ -12,8 +12,8 @@ const Result:FC<ResultProps> = ({ questions, playAgain }) => {
     return question.correct_answer === question.answer ? ++accumulator : accumulator
   }, 0);
   return (
-    <div>
-      <div>
+    <div className='result'>
+      <div className='result__score'>
         <div>
           <strong>You've scored</strong>
         </div>
@@ -21,14 +21,13 @@ const Result:FC<ResultProps> = ({ questions, playAgain }) => {
       </div>
       { questions.map(question => {
         return (
-          <div key={ uniqueId('question') }>
-            { question.correct_answer === question.answer ? '+' : '-' }&nbsp;
+          <div className={`result__question result__question--${question.correct_answer === question.answer ? 'correct' : 'incorrect'}`} key={ uniqueId('question') }>
             <span dangerouslySetInnerHTML={{ __html: question.question }} />
           </div>
         )
       })}
-      <div>
-        <button onClick={ playAgain }>play again</button>
+      <div className='result__controls'>
+        <button className='btn btn--primary' onClick={ playAgain }>play again</button>
       </div>
     </div>
   )
