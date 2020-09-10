@@ -81,9 +81,6 @@ body {
   }
 }
 
-.layout {
-  // padding-top: 25px
-}
 
 .quiz {
   max-width: 500px;
@@ -144,6 +141,7 @@ body {
 
 .question {
   width: 100%;
+  margin-top: 25px;
   &__category {
     text-align: center;
   }
@@ -162,6 +160,7 @@ body {
 }
 
 .result {
+  margin-top: 25px;
   &__score {
     text-align: center;
   }
