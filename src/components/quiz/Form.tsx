@@ -18,11 +18,11 @@ const Form:FC<FormProps> = (props) => {
   };
 
   return (
-    <div className='form__wrapper'>
+    <div className='form'>
       <div className='form__title'>
         Welcome to Trivia Test
       </div>
-      <form className='form' onSubmit={ submit }>
+      <form className='form__wrapper' onSubmit={ submit }>
         <div className='form__row'>
           <input 
             className='form__control' 
